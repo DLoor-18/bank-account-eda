@@ -5,6 +5,7 @@ import ec.com.sofka.exception.ConflictException;
 import ec.com.sofka.gateway.ErrorBusMessage;
 import ec.com.sofka.gateway.IEventStore;
 import ec.com.sofka.gateway.UserRepository;
+import ec.com.sofka.generics.interfaces.IUseCaseExecute;
 import ec.com.sofka.mapper.UserMapper;
 import ec.com.sofka.model.ErrorMessage;
 import ec.com.sofka.requests.UserRequest;
@@ -12,7 +13,7 @@ import ec.com.sofka.responses.UserResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class CreateUserUseCase {
+public class CreateUserUseCase implements IUseCaseExecute<UserRequest, UserResponse> {
     private final IEventStore repository;
     private final UserRepository userRepository;
     private final ErrorBusMessage errorBusMessage;

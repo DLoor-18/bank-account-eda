@@ -1,24 +1,30 @@
 package ec.com.sofka.events;
 
 import ec.com.sofka.generics.domain.DomainEvent;
-import ec.com.sofka.models.user.User;
+import ec.com.sofka.entities.user.User;
 import ec.com.sofka.utils.enums.EventsEnum;
 import ec.com.sofka.utils.enums.StatusEnum;
 
 import java.math.BigDecimal;
 
 public class AccountCreated extends DomainEvent {
+    private final String AccountId;
     private final String accountNumber;
     private final BigDecimal balance;
-    private final StatusEnum statusEnum;
+    private final StatusEnum status;
     private final User user;
 
-    public AccountCreated(String accountNumber, BigDecimal balance, StatusEnum statusEnum, User user) {
+    public AccountCreated(String accountId, String accountNumber, BigDecimal balance, StatusEnum status, User user) {
         super(EventsEnum.ACCOUNT_CREATED.name());
+        AccountId = accountId;
         this.accountNumber = accountNumber;
         this.balance = balance;
-        this.statusEnum = statusEnum;
+        this.status = status;
         this.user = user;
+    }
+
+    public String getAccountId() {
+        return AccountId;
     }
 
     public String getAccountNumber() {
@@ -30,7 +36,7 @@ public class AccountCreated extends DomainEvent {
     }
 
     public StatusEnum getStatus() {
-        return statusEnum;
+        return status;
     }
 
     public User getUser() {

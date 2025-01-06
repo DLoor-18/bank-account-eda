@@ -4,13 +4,14 @@ import ec.com.sofka.aggregate.AccountAggregate;
 import ec.com.sofka.exception.RecordNotFoundException;
 import ec.com.sofka.gateway.*;
 import ec.com.sofka.gateway.dto.TransactionDTO;
+import ec.com.sofka.generics.interfaces.IUseCaseExecute;
 import ec.com.sofka.mapper.AccountMapper;
 import ec.com.sofka.mapper.TransactionMapper;
 import ec.com.sofka.mapper.TransactionTypeMapper;
 import ec.com.sofka.model.ErrorMessage;
 import ec.com.sofka.model.TransactionMessage;
-import ec.com.sofka.models.transaction.Transaction;
-import ec.com.sofka.models.transaction.values.objects.ProcessingDate;
+import ec.com.sofka.entities.transaction.Transaction;
+import ec.com.sofka.entities.transaction.values.objects.ProcessingDate;
 import ec.com.sofka.requests.TransactionRequest;
 import ec.com.sofka.responses.TransactionResponse;
 import ec.com.sofka.rules.BalanceCalculator;
@@ -20,7 +21,7 @@ import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
 
-public class CreateTransactionUseCase {
+public class CreateTransactionUseCase implements IUseCaseExecute<TransactionRequest, TransactionResponse> {
     private final IEventStore repository;
     private final TransactionRepository transactionRepository;
     private final TransactionTypeRepository transactionTypeRepository;
@@ -41,6 +42,7 @@ public class CreateTransactionUseCase {
         this.errorBusMessage = errorBusMessage;
     }
 
+    @Override
     public Mono<TransactionResponse> execute(TransactionRequest transactionRequest) {
         return transactionTypeRepository.findById(transactionRequest.getTransactionTypeId())
                 .switchIfEmpty(Mono.defer(() -> {
@@ -83,6 +85,14 @@ public class CreateTransactionUseCase {
                 new ProcessingDate(null).value(),
                 AccountMapper.mapToModelFromDTO(transaction.getAccount()),
                 TransactionTypeMapper.mapToModelFromDTO(transaction.getTransactionType())
+        );
+
+        accountAggregate.updateAccount(
+                accountAggregate.getTransaction().getAccount().getId().value(),
+                accountAggregate.getTransaction().getAccount().getAccountNumber().value(),
+                accountAggregate.getTransaction().getAccount().getBalance(),
+                accountAggregate.getTransaction().getAccount().getStatus(),
+                accountAggregate.getTransaction().getAccount().getUser()
         );
 
         return accountRepository.save(transaction.getAccount())

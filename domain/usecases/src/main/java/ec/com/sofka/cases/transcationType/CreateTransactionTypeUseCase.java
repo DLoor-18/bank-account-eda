@@ -5,6 +5,7 @@ import ec.com.sofka.exception.ConflictException;
 import ec.com.sofka.gateway.ErrorBusMessage;
 import ec.com.sofka.gateway.IEventStore;
 import ec.com.sofka.gateway.TransactionTypeRepository;
+import ec.com.sofka.generics.interfaces.IUseCaseExecute;
 import ec.com.sofka.mapper.TransactionTypeMapper;
 import ec.com.sofka.model.ErrorMessage;
 import ec.com.sofka.requests.TransactionTypeRequest;
@@ -12,7 +13,7 @@ import ec.com.sofka.responses.TransactionTypeResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class CreateTransactionTypeUseCase {
+public class CreateTransactionTypeUseCase implements IUseCaseExecute<TransactionTypeRequest, TransactionTypeResponse> {
     private final IEventStore repository;
     private final TransactionTypeRepository transactionTypeRepository;
     private final ErrorBusMessage errorBusMessage;
@@ -23,6 +24,7 @@ public class CreateTransactionTypeUseCase {
         this.errorBusMessage = errorBusMessage;
     }
 
+    @Override
     public Mono<TransactionTypeResponse> execute(TransactionTypeRequest transactionTypeRequest) {
         AccountAggregate accountAggregate = new AccountAggregate();
 

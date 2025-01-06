@@ -6,6 +6,7 @@ import ec.com.sofka.gateway.AccountRepository;
 import ec.com.sofka.gateway.ErrorBusMessage;
 import ec.com.sofka.gateway.IEventStore;
 import ec.com.sofka.gateway.UserRepository;
+import ec.com.sofka.generics.interfaces.IUseCaseExecute;
 import ec.com.sofka.mapper.AccountMapper;
 import ec.com.sofka.mapper.UserMapper;
 import ec.com.sofka.model.ErrorMessage;
@@ -14,7 +15,7 @@ import ec.com.sofka.responses.AccountResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class CreateAccountUseCase {
+public class CreateAccountUseCase implements IUseCaseExecute<AccountRequest, AccountResponse> {
     private final IEventStore repository;
     private final AccountRepository accountRepository;
     private final UserRepository userRepository;

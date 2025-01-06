@@ -3,7 +3,7 @@ package ec.com.sofka.generics.shared;
 import ec.com.sofka.generics.domain.DomainActionsContainer;
 import ec.com.sofka.generics.domain.DomainActionsHandler;
 import ec.com.sofka.generics.domain.DomainEvent;
-import ec.com.sofka.generics.interfaces.IApplyEvent;
+import ec.com.sofka.generics.interfaces.IEvent;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public abstract class AggregateRoot<I extends Identity> extends Entity<I> {
         actionsHandler.subscribe(container);
     }
 
-    protected IApplyEvent addEvent(final DomainEvent event) {
+    protected IEvent addEvent(final DomainEvent event) {
         final String aggregateName = this.getId()
                 .getClass()
                 .getSimpleName()

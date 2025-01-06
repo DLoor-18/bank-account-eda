@@ -1,7 +1,7 @@
 package ec.com.sofka.mapper;
 
 import ec.com.sofka.gateway.dto.TransactionDTO;
-import ec.com.sofka.models.transaction.Transaction;
+import ec.com.sofka.entities.transaction.Transaction;
 import ec.com.sofka.requests.TransactionRequest;
 import ec.com.sofka.responses.TransactionResponse;
 import org.springframework.stereotype.Component;

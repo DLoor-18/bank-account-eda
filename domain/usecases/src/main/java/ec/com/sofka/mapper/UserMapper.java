@@ -1,9 +1,9 @@
 package ec.com.sofka.mapper;
 
 import ec.com.sofka.gateway.dto.UserDTO;
-import ec.com.sofka.models.user.User;
-import ec.com.sofka.models.user.values.UserId;
-import ec.com.sofka.models.user.values.objects.IdentityCard;
+import ec.com.sofka.entities.user.User;
+import ec.com.sofka.entities.user.values.UserId;
+import ec.com.sofka.entities.user.values.objects.IdentityCard;
 import ec.com.sofka.responses.UserResponse;
 
 public class UserMapper {

@@ -3,15 +3,16 @@ package ec.com.sofka.aggregate.handlers;
 import ec.com.sofka.aggregate.AccountAggregate;
 import ec.com.sofka.events.UserCreated;
 import ec.com.sofka.generics.domain.DomainActionsContainer;
-import ec.com.sofka.models.user.User;
-import ec.com.sofka.models.user.values.UserId;
-import ec.com.sofka.models.user.values.objects.IdentityCard;
+import ec.com.sofka.entities.user.User;
+import ec.com.sofka.entities.user.values.UserId;
+import ec.com.sofka.entities.user.values.objects.IdentityCard;
 
 public class UserHandler extends DomainActionsContainer {
 
     public UserHandler(AccountAggregate accountAggregate) {
         addDomainActions((UserCreated event) -> {
-            User user = new User(new UserId(),
+            User user = new User(
+                    UserId.of(event.getUserId()),
                     event.getFirstName(),
                     event.getLastName(),
                     IdentityCard.of(event.getIdentityCard()),

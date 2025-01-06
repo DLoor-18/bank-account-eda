@@ -3,15 +3,15 @@ package ec.com.sofka.aggregate.handlers;
 import ec.com.sofka.aggregate.AccountAggregate;
 import ec.com.sofka.events.TransactionTypeCreated;
 import ec.com.sofka.generics.domain.DomainActionsContainer;
-import ec.com.sofka.models.transactionType.TransactionType;
-import ec.com.sofka.models.transactionType.values.TransactionTypeId;
+import ec.com.sofka.entities.transactionType.TransactionType;
+import ec.com.sofka.entities.transactionType.values.TransactionTypeId;
 
 public class TransactionTypeHandler extends DomainActionsContainer {
 
     public TransactionTypeHandler(AccountAggregate accountAggregate) {
         addDomainActions((TransactionTypeCreated event) -> {
             TransactionType transactionType = new TransactionType(
-                    new TransactionTypeId(),
+                    TransactionTypeId.of(event.getTransactionTypeId()),
                     event.getType(),
                     event.getDescription(),
                     event.getValue(),

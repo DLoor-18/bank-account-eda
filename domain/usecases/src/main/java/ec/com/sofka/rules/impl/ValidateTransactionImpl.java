@@ -39,7 +39,7 @@ public class ValidateTransactionImpl implements ValidateTransaction {
 
     private Mono<TransactionDTO> validateTransactionRules(TransactionDTO transaction) {
         Predicate<TransactionDTO> isAccountActive = txn ->
-                StatusEnum.ACTIVO.equals(txn.getAccount().getStatus());
+                StatusEnum.ACTIVE.equals(txn.getAccount().getStatus());
 
         Predicate<TransactionDTO> isAccountRejected = txn ->
                 txn.getTransactionType().getDiscount() &&

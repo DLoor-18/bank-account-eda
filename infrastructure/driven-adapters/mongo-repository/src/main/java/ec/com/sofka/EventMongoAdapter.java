@@ -15,7 +15,7 @@ import reactor.core.scheduler.Schedulers;
 public class EventMongoAdapter implements IEventStore {
 
     private final IEventMongoRepository repository;
-    private final IJSONMapper mapper;
+    private final JSONMap mapper;
     private final ReactiveMongoTemplate eventReactiveMongoTemplate;
 
     public EventMongoAdapter(IEventMongoRepository repository, JSONMap mapper, @Qualifier("eventReactiveMongoTemplate")ReactiveMongoTemplate eventReactiveMongoTemplate) {
@@ -45,7 +45,7 @@ public class EventMongoAdapter implements IEventStore {
     public Flux<DomainEvent> findAggregate(String aggregateId) {
         return repository.findByAggregateId(aggregateId)
                 .flatMap(eventEntity -> Mono.fromCallable(() ->
-                        mapper.readFromJson(eventEntity.getEventData(), DomainEvent.class)
+                        eventEntity.deserializeEvent(mapper)
                 ).subscribeOn(Schedulers.boundedElastic()));
     }
 

@@ -19,7 +19,7 @@ public class UserModelMapper {
                 user.getIdentityCard(),
                 user.getEmail(),
                 user.getPassword(),
-                StatusEnum.valueOf(user.getStatus())
+                StatusEnum.ACTIVE.name().compareTo(user.getStatus()) == 0 ? StatusEnum.ACTIVE : StatusEnum.INACTIVE
         );
     }
 

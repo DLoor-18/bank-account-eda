@@ -5,16 +5,16 @@ import ec.com.sofka.aggregate.handlers.TransactionHandler;
 import ec.com.sofka.aggregate.handlers.TransactionTypeHandler;
 import ec.com.sofka.aggregate.handlers.UserHandler;
 import ec.com.sofka.aggregate.values.AccountId;
-import ec.com.sofka.events.AccountCreated;
-import ec.com.sofka.events.TransactionCreated;
-import ec.com.sofka.events.TransactionTypeCreated;
-import ec.com.sofka.events.UserCreated;
+import ec.com.sofka.events.*;
 import ec.com.sofka.generics.domain.DomainEvent;
 import ec.com.sofka.generics.shared.AggregateRoot;
-import ec.com.sofka.models.account.Account;
-import ec.com.sofka.models.transaction.Transaction;
-import ec.com.sofka.models.transactionType.TransactionType;
-import ec.com.sofka.models.user.User;
+import ec.com.sofka.entities.account.Account;
+import ec.com.sofka.entities.transaction.Transaction;
+import ec.com.sofka.entities.transaction.values.TransactionId;
+import ec.com.sofka.entities.transactionType.TransactionType;
+import ec.com.sofka.entities.transactionType.values.TransactionTypeId;
+import ec.com.sofka.entities.user.User;
+import ec.com.sofka.entities.user.values.UserId;
 import ec.com.sofka.utils.enums.StatusEnum;
 
 import java.math.BigDecimal;
@@ -40,24 +40,31 @@ public class AccountAggregate extends AggregateRoot<AccountId> {
     }
 
     public void createUser(String firstName, String lastName, String identityCard, String email, String password, StatusEnum statusEnum) {
-        addEvent(new UserCreated(firstName, lastName, identityCard, email, password, statusEnum)).apply();
+        addEvent(new UserCreated(new UserId().value(), firstName, lastName, identityCard, email, password, statusEnum)).apply();
     }
 
     public void createTransactionType(String type, String description, BigDecimal value, Boolean transactionCost, Boolean discount, StatusEnum statusEnum) {
-        addEvent(new TransactionTypeCreated(type, description, value, transactionCost, discount, statusEnum)).apply();
+        addEvent(new TransactionTypeCreated(new TransactionTypeId().value(), type, description, value, transactionCost, discount, statusEnum)).apply();
     }
 
     public void createAccount(String accountNumber, BigDecimal balance, StatusEnum statusEnum, User user) {
-        addEvent(new AccountCreated(accountNumber, balance, statusEnum, user)).apply();
+        addEvent(new AccountCreated(new AccountId().value(), accountNumber, balance, statusEnum, user)).apply();
+    }
+
+    public void updateAccount(String accountId, String accountNumber, BigDecimal balance, StatusEnum statusEnum, User user) {
+        addEvent(new AccountCreated(AccountId.of(accountId).value(), accountNumber, balance, statusEnum, user)).apply();
     }
 
     public void createTransaction(String transactionAccount, String details, BigDecimal amount, String processingDate, Account account, TransactionType transactionType) {
-        addEvent(new TransactionCreated(transactionAccount, details, amount, processingDate, account, transactionType)).apply();
+        addEvent(new TransactionCreated(new TransactionId().value(), transactionAccount, details, amount, processingDate, account, transactionType)).apply();
     }
 
     public static AccountAggregate from(final String id, List<DomainEvent> events) {
         AccountAggregate accountAggregate = new AccountAggregate(id);
         events.forEach((event) -> accountAggregate.addEvent(event).apply());
+        events.stream()
+                .filter(event -> id.equals(event.getAggregateRootId()))
+                .forEach((event) -> accountAggregate.addEvent(event).apply());
         return accountAggregate;
     }
 

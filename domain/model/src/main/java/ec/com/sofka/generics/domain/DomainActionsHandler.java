@@ -1,6 +1,6 @@
 package ec.com.sofka.generics.domain;
 
-import ec.com.sofka.generics.interfaces.IApplyEvent;
+import ec.com.sofka.generics.interfaces.IEvent;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,7 +21,7 @@ public class DomainActionsHandler {
         actions.addAll(container.domainActions);
     }
 
-    public IApplyEvent append(final DomainEvent event){
+    public IEvent append(final DomainEvent event){
         events.add(event);
         return () -> apply(event);
     }
