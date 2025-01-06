@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mongodb@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
+    <root id="1">
+      <ServerVersion>8.0.4</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="3" parent="1" name="bank_account">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="4" parent="1" name="bank_account_audit">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="5" parent="1" name="config">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="6" parent="1" name="events_bank">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="7" parent="1" name="local">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <table id="8" parent="3" name="accounts"/>
+    <table id="9" parent="3" name="transaction_types"/>
+    <table id="10" parent="3" name="transactions"/>
+    <table id="11" parent="3" name="users"/>
+    <table id="12" parent="6" name="test"/>
+    <column id="13" parent="12" name="_id">
+      <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
+    </column>
+    <column id="14" parent="12" name="test">
+      <Position>2</Position>
+      <StoredType>Boolean|12s</StoredType>
+    </column>
+    <index id="15" parent="12" name="_id_">
+      <ColNames>_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+  </database-model>
+</dataSource>
