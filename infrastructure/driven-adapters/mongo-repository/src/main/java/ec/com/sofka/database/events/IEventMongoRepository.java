@@ -6,4 +6,6 @@ import reactor.core.publisher.Flux;
 
 public interface IEventMongoRepository extends ReactiveMongoRepository<EventEntity, String> {
     Flux<EventEntity> findByAggregateId(String aggregateId);
+
+    Flux<EventEntity> findByEventType(String eventType);
 }

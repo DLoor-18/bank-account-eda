@@ -44,7 +44,6 @@ public class EventEntity {
 
     public DomainEvent deserializeEvent(JSONMap eventSerializer) {
         try {
-
             String className = Arrays.stream(this.getEventType().toLowerCase().split("_"))
                     .map(part -> Character.toUpperCase(part.charAt(0)) + part.substring(1))
                     .collect(Collectors.joining());

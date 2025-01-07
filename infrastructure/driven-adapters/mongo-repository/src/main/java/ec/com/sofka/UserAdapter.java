@@ -38,8 +38,8 @@ public class UserAdapter implements UserRepository {
     }
 
     @Override
-    public Mono<UserDTO> findByCi(String ci) {
-        return userRepository.findByIdentityCard(ci)
+    public Mono<UserDTO> findByIdentityCard(String identityCard) {
+        return userRepository.findByIdentityCard(identityCard)
                 .map(UserEntityMapper::mapToDTO);
     }
 

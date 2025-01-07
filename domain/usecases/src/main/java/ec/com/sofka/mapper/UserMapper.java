@@ -65,4 +65,20 @@ public class UserMapper {
         );
     }
 
+    public static User mapToModelFromResponse(UserResponse user) {
+        if (user == null) {
+            return null;
+        }
+
+        return new User(
+                null,
+                user.getFirstName(),
+                user.getLastName(),
+                IdentityCard.of(user.getIdentityCard()),
+                user.getEmail(),
+                null,
+                user.getStatus()
+        );
+    }
+
 }

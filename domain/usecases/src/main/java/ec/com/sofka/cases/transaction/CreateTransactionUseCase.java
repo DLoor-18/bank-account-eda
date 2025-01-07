@@ -97,8 +97,9 @@ public class CreateTransactionUseCase implements IUseCaseExecute<TransactionRequ
 
         return accountRepository.save(transaction.getAccount())
                 .then(transactionRepository.save(transaction))
-                .thenMany(Flux.fromIterable(accountAggregate.getUncommittedEvents()))
-                .flatMap(event -> Mono.fromCallable(() -> repository.save(event)))
+                .flatMap(account -> Flux.fromIterable(accountAggregate.getUncommittedEvents())
+                        .flatMap(repository::save)
+                        .then(Mono.just(account)))
                 .then(Mono.fromCallable(() -> {
                     accountAggregate.markEventsAsCommitted();
                     return accountAggregate.getTransaction();

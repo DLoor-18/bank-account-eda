@@ -10,13 +10,15 @@ public class AccountRequest extends Request {
     private BigDecimal balance;
     private StatusEnum status;
     private String userId;
+    private String userAggregateId;
 
-    public AccountRequest(String accountNumber, BigDecimal balance, StatusEnum status, String userId) {
+    public AccountRequest(String accountNumber, BigDecimal balance, StatusEnum status, String userId, String userAggregateId) {
         super(null);
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.status = status;
         this.userId = userId;
+        this.userAggregateId = userAggregateId;
     }
 
     public String getAccountNumber() {
@@ -49,5 +51,13 @@ public class AccountRequest extends Request {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserAggregateId() {
+        return userAggregateId;
+    }
+
+    public void setUserAggregateId(String userAggregateId) {
+        this.userAggregateId = userAggregateId;
     }
 }

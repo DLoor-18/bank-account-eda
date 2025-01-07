@@ -12,6 +12,6 @@ public interface UserRepository {
 
     Mono<UserDTO> findById(String id);
 
-    Mono<UserDTO> findByCi(String ci);
+    Mono<UserDTO> findByIdentityCard(String identityCard);
 
 }

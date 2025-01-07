@@ -12,7 +12,7 @@ public class GetAllUsersUseCase {
         this.userRepository = userRepository;
     }
 
-    public  Flux<UserResponse> apply(){
+    public  Flux<UserResponse> apply() {
         return userRepository.findAll()
                 .map(UserMapper::mapToResponseFromDTO);
     }

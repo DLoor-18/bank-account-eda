@@ -27,7 +27,7 @@ public class CreateUserUseCase implements IUseCaseExecute<UserRequest, UserRespo
     public Mono<UserResponse> execute(UserRequest userRequest) {
         AccountAggregate accountAggregate = new AccountAggregate();
 
-        return userRepository.findByCi(userRequest.getIdentityCard())
+        return userRepository.findByIdentityCard(userRequest.getIdentityCard())
                 .flatMap(userFound -> {
                     errorBusMessage.sendMsg(new ErrorMessage("User is already registered (" + userRequest.getIdentityCard() + ")",
                             "Create User"));
@@ -44,8 +44,9 @@ public class CreateUserUseCase implements IUseCaseExecute<UserRequest, UserRespo
                     );
 
                     return userRepository.save(UserMapper.mapToDTOFromModel(accountAggregate.getUser()))
-                            .thenMany(Flux.fromIterable(accountAggregate.getUncommittedEvents()))
-                            .flatMap(event -> Mono.fromCallable(() -> repository.save(event)))
+                            .flatMap(user -> Flux.fromIterable(accountAggregate.getUncommittedEvents())
+                                    .flatMap(repository::save)
+                                    .then(Mono.just(user)))
                             .then(Mono.fromCallable(() -> {
                                 accountAggregate.markEventsAsCommitted();
                                 return UserMapper.mapToResponseFromModel(accountAggregate.getUser());

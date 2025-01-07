@@ -11,7 +11,7 @@ public interface IUserRepository extends ReactiveMongoRepository<UserEntity, Str
 
     Flux<UserEntity> findAll();
 
-    Mono<UserEntity> findByIdentityCard(String ci);
+    Mono<UserEntity> findByIdentityCard(String identityCard);
 
     Mono<UserEntity> findById(String id);
 }

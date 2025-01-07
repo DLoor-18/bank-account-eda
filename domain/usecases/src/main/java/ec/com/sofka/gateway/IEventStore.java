@@ -5,6 +5,13 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface IEventStore {
+
     Mono<DomainEvent> save(DomainEvent event);
+
     Flux<DomainEvent> findAggregate(String aggregateId);
+
+    Flux<DomainEvent> findAggregatesByEventType(String eventType);
+
+    Flux<DomainEvent> findAllAggregates();
+
 }

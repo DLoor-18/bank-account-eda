@@ -45,13 +45,13 @@ public class CreateTransactionTypeUseCase implements IUseCaseExecute<Transaction
                     );
 
                     return transactionTypeRepository.save(TransactionTypeMapper.mapToDTOFromModel(accountAggregate.getTransactionType()))
-                            .thenMany(Flux.fromIterable(accountAggregate.getUncommittedEvents()))
-                            .flatMap(event -> Mono.fromCallable(() -> repository.save(event)))
+                            .flatMap(transactionType -> Flux.fromIterable(accountAggregate.getUncommittedEvents())
+                                    .flatMap(repository::save)
+                                    .then(Mono.just(transactionType)))
                             .then(Mono.fromCallable(() -> {
                                 accountAggregate.markEventsAsCommitted();
                                 return TransactionTypeMapper.mapToResponseFromModel(accountAggregate.getTransactionType());
                             }));
-
 
                 }));
     }

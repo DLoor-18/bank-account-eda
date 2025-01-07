@@ -9,7 +9,8 @@ import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
+
+import java.util.Comparator;
 
 @Repository
 public class EventMongoAdapter implements IEventStore {
@@ -26,15 +27,16 @@ public class EventMongoAdapter implements IEventStore {
 
     @Override
     public Mono<DomainEvent> save(DomainEvent event) {
-        return Mono.fromCallable(() -> {
-                    String eventData = mapper.writeToJson(event);
+        return Mono.just(event)
+                .map(evt -> {
+                    String eventData = mapper.writeToJson(evt);
                     return new EventEntity(
-                            event.getEventId(),
-                            event.getAggregateRootId(),
-                            event.getEventType(),
+                            evt.getEventId(),
+                            evt.getAggregateRootId(),
+                            evt.getEventType(),
                             eventData,
-                            event.getWhen().toString(),
-                            event.getVersion()
+                            evt.getWhen().toString(),
+                            evt.getVersion()
                     );
                 })
                 .flatMap(repository::save)
@@ -44,9 +46,23 @@ public class EventMongoAdapter implements IEventStore {
     @Override
     public Flux<DomainEvent> findAggregate(String aggregateId) {
         return repository.findByAggregateId(aggregateId)
-                .flatMap(eventEntity -> Mono.fromCallable(() ->
-                        eventEntity.deserializeEvent(mapper)
-                ).subscribeOn(Schedulers.boundedElastic()));
+                .map(eventEntity -> eventEntity.deserializeEvent(mapper))
+                .sort(Comparator.comparing(DomainEvent::getVersion));
+    }
+
+    @Override
+    public Flux<DomainEvent> findAggregatesByEventType(String eventType) {
+        return repository.findByEventType(eventType)
+                .map(eventEntity -> eventEntity.deserializeEvent(mapper))
+                .sort(Comparator.comparing(DomainEvent::getVersion));
+    }
+
+    @Override
+    public Flux<DomainEvent> findAllAggregates() {
+        return repository.findAll()
+                .map(eventEntity -> eventEntity.deserializeEvent(mapper))
+                .sort(Comparator.comparing(DomainEvent::getAggregateRootId)
+                        .thenComparing(DomainEvent::getVersion, Comparator.reverseOrder()));
     }
 
 }
