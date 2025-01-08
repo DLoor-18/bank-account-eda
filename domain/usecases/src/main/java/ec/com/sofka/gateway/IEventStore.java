@@ -10,8 +10,6 @@ public interface IEventStore {
 
     Flux<DomainEvent> findAggregate(String aggregateId);
 
-    Flux<DomainEvent> findAggregatesByEventType(String eventType);
-
     Flux<DomainEvent> findAllAggregates();
 
 }

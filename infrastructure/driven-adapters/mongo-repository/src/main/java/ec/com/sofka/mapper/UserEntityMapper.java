@@ -12,6 +12,7 @@ public class UserEntityMapper {
             return null;
         }
         return new UserEntity(
+                user.getId(),
                 user.getFirstName(),
                 user.getLastName(),
                 user.getIdentityCard(),

@@ -30,8 +30,8 @@ public class AccountRequestDTO implements Serializable {
     @NotNull(message = "userId cannot be null")
     private String userId;
 
-    @Schema(description = "Aggregate Root Id")
-    @NotNull(message = "aggregateRootId cannot be null")
+    @Schema(description = "User Aggregate ID")
+    @NotNull(message = "userAggregateId cannot be null")
     private String userAggregateId;
 
     public AccountRequestDTO(String accountNumber, BigDecimal balance, String status, String userId, String userAggregateId) {
@@ -46,40 +46,20 @@ public class AccountRequestDTO implements Serializable {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
     public BigDecimal getBalance() {
         return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getUserAggregateId() {
         return userAggregateId;
-    }
-
-    public void setUserAggregateId(String userAggregateId) {
-        this.userAggregateId = userAggregateId;
     }
 
 }

@@ -17,6 +17,14 @@ public class AccountDTO {
 
     public AccountDTO() {}
 
+    public AccountDTO(String id, String number, BigDecimal balance, StatusEnum status, UserDTO userDTO) {
+        this.id = id;
+        this.number = number;
+        this.balance = balance;
+        this.status = status;
+        this.userDTO = userDTO;
+    }
+
     public AccountDTO(String number, BigDecimal balance, StatusEnum status, UserDTO userDTO) {
         this.number = number;
         this.balance = balance;

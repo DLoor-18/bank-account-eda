@@ -12,6 +12,7 @@ public class TransactionTypeEntityMapper {
             return null;
         }
         return new TransactionTypeEntity(
+                transactionType.getId(),
                 transactionType.getType(),
                 transactionType.getDescription(),
                 transactionType.getValue(),

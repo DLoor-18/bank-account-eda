@@ -1,9 +1,9 @@
 package ec.com.sofka.mapper;
 
 import ec.com.sofka.gateway.dto.UserDTO;
-import ec.com.sofka.entities.user.User;
-import ec.com.sofka.entities.user.values.UserId;
-import ec.com.sofka.entities.user.values.objects.IdentityCard;
+import ec.com.sofka.aggregate.entities.user.User;
+import ec.com.sofka.aggregate.entities.user.values.UserId;
+import ec.com.sofka.aggregate.entities.user.values.objects.IdentityCard;
 import ec.com.sofka.responses.UserResponse;
 
 public class UserMapper {
@@ -56,6 +56,7 @@ public class UserMapper {
         }
 
         return new UserDTO(
+                user.getId().value(),
                 user.getFirstName(),
                 user.getLastName(),
                 user.getIdentityCard().value(),

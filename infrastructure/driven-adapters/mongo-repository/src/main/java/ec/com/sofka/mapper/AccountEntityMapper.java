@@ -13,6 +13,7 @@ public class AccountEntityMapper {
         }
 
         return new AccountEntity(
+                account.getId(),
                 account.getNumber(),
                 account.getBalance(),
                 account.getStatus(),

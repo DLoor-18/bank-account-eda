@@ -13,9 +13,9 @@ public class TransactionEntityMapper {
         }
 
         return new TransactionEntity(
+                transaction.getId(),
                 transaction.getAccountNumber(),
                 transaction.getDetails(),
-                transaction.getAccountNumber(),
                 transaction.getAmount(),
                 transaction.getProcessingDate(),
                 AccountEntityMapper.mapToEntity(transaction.getAccount()),

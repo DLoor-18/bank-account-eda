@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="504a7607-67a9-49fc-870d-67eab321a431" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/UpdateAccountUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/app-service/src/main/java/ec/com/sofka/config/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/applications/app-service/src/main/java/ec/com/sofka/config/JacksonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/AccountAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/AccountAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/AccountHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionTypeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/UserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/account/values/AccountId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/values/AccountId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/account/values/objects/AccountNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/values/objects/AccountNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/TransactionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/TransactionId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/objects/Amount.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/Amount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/objects/ProcessingDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/ProcessingDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/objects/TransactionAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/TransactionAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transactionType/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transactionType/TransactionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transactionType/values/TransactionTypeId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transactionType/values/TransactionTypeId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/values/FirstName.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/FirstName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/values/UserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/UserId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/values/objects/IdentityCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/objects/IdentityCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/AccountCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/AccountUpdated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountUpdated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/TransactionCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/TransactionCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/TransactionTypeCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/TransactionTypeCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/UserCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/UserCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/CreateAccountUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/CreateAccountUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/FindAccountByNumberUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/FindAccountByNumberUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transaction/CreateTransactionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transaction/CreateTransactionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transcationType/FindTransactionTypeByIdUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transcationType/FindTransactionTypeByIdUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByIdUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByIdUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/IEventStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/IEventStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/dto/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionTypeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/requests/TransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/requests/TransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/EventMongoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/EventMongoAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/EventEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/EventEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/TransactionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/TransactionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/AccountEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/AccountEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionTypeEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionTypeEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/UserEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/UserEntityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/AccountRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/AccountRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionTypeRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionTypeRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/UserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/ConflictException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/RecordNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/TransactionRejectedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/mapper/TransactionModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/mapper/TransactionModelMapper.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="assessment-eda-es" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="assessment-eda-es" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="assessment-eda-es" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2r837OtbluWFrCpkmEygayKS8wu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Build bank-account-eda.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-account-eda [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.bank-account-eda [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MainApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lt1112/CURSOS/bank-account-eda/infrastructure/entry-points/web/src/main/java/ec/com/sofka&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka" />
+      <recent name="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/handlers" />
+      <recent name="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data" />
+      <recent name="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka" />
+      <recent name="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ec.com.sofka.events" />
+      <recent name="ec.com.sofka.config" />
+      <recent name="ec.com.sofka.model.user" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MainApplication">
+    <configuration name="console_1.js" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/02413624-7889-40ef-b855-7d0dc13f3a8c/console_1.js" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="bank-account-eda [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="bank-account-eda [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="console.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/consoles/db/871982ee-ddb2-4d51-9e72-6b9a056d13cb/console.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="console.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/consoles/db/02413624-7889-40ef-b855-7d0dc13f3a8c/console.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="assessment-eda-es.app-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ec.com.sofka.MainApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.bank-account-eda [clean]" />
+        <item itemvalue="Gradle.bank-account-eda [build]" />
+        <item itemvalue="Node.js.console.js (1)" />
+        <item itemvalue="Database Script.console_1.js" />
+        <item itemvalue="Node.js.console.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="504a7607-67a9-49fc-870d-67eab321a431" name="Changes" comment="" />
+      <created>1735926706425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735926706425</updated>
+      <workItem from="1735926707650" duration="144168000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/AccountAdapter.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/AccountAggregate.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/4.4.1/2cd1faa1142449e1b0341f78428814a5012f2830/spring-data-mongodb-4.4.1.jar!/org/springframework/data/mongodb/repository/support/SimpleReactiveMongoRepository.class</url>
+          <line>56</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/GlobalErrorWebExceptionHandler.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/GlobalErrorWebExceptionHandler.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/GlobalErrorWebExceptionHandler.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="ex.getClass()" />
+        <watch expression="InternalServerException.class" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

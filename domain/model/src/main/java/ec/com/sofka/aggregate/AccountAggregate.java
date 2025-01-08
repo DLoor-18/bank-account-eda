@@ -1,20 +1,23 @@
 package ec.com.sofka.aggregate;
 
+import ec.com.sofka.aggregate.events.AccountCreated;
+import ec.com.sofka.aggregate.events.TransactionCreated;
+import ec.com.sofka.aggregate.events.TransactionTypeCreated;
+import ec.com.sofka.aggregate.events.UserCreated;
 import ec.com.sofka.aggregate.handlers.AccountHandler;
 import ec.com.sofka.aggregate.handlers.TransactionHandler;
 import ec.com.sofka.aggregate.handlers.TransactionTypeHandler;
 import ec.com.sofka.aggregate.handlers.UserHandler;
 import ec.com.sofka.aggregate.values.AccountId;
-import ec.com.sofka.events.*;
 import ec.com.sofka.generics.domain.DomainEvent;
 import ec.com.sofka.generics.shared.AggregateRoot;
-import ec.com.sofka.entities.account.Account;
-import ec.com.sofka.entities.transaction.Transaction;
-import ec.com.sofka.entities.transaction.values.TransactionId;
-import ec.com.sofka.entities.transactionType.TransactionType;
-import ec.com.sofka.entities.transactionType.values.TransactionTypeId;
-import ec.com.sofka.entities.user.User;
-import ec.com.sofka.entities.user.values.UserId;
+import ec.com.sofka.aggregate.entities.account.Account;
+import ec.com.sofka.aggregate.entities.transaction.Transaction;
+import ec.com.sofka.aggregate.entities.transaction.values.TransactionId;
+import ec.com.sofka.aggregate.entities.transactionType.TransactionType;
+import ec.com.sofka.aggregate.entities.transactionType.values.TransactionTypeId;
+import ec.com.sofka.aggregate.entities.user.User;
+import ec.com.sofka.aggregate.entities.user.values.UserId;
 import ec.com.sofka.utils.enums.StatusEnum;
 
 import java.math.BigDecimal;

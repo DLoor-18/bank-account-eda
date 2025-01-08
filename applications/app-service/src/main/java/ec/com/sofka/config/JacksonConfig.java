@@ -1,3 +1,4 @@
+/*
 package ec.com.sofka.config;
 
 import ec.com.sofka.IJSONMapper;
@@ -11,4 +12,4 @@ public class JacksonConfig {
     public IJSONMapper jsonMapper(){
         return new JSONMap();
     }
-}
+}*/

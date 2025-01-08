@@ -11,14 +11,18 @@ public class TransactionRequest extends Request {
     private String accountNumber;
     private String details;
     private String transactionTypeId;
+    private String transactionTypeAggregateId;
+    private String accountAggregateId;
 
-    public TransactionRequest(BigDecimal amount, String processingDate, String accountNumber, String details, String transactionTypeId) {
+    public TransactionRequest(BigDecimal amount, String processingDate, String accountNumber, String details, String transactionTypeId, String transactionTypeAggregateId, String accountAggregateId) {
         super(null);
         this.amount = amount;
         this.processingDate = processingDate;
         this.accountNumber = accountNumber;
         this.details = details;
         this.transactionTypeId = transactionTypeId;
+        this.transactionTypeAggregateId = transactionTypeAggregateId;
+        this.accountAggregateId = accountAggregateId;
     }
 
     public BigDecimal getAmount() {
@@ -61,4 +65,19 @@ public class TransactionRequest extends Request {
         this.transactionTypeId = transactionTypeId;
     }
 
+    public String getTransactionTypeAggregateId() {
+        return transactionTypeAggregateId;
+    }
+
+    public void setTransactionTypeAggregateId(String transactionTypeAggregateId) {
+        this.transactionTypeAggregateId = transactionTypeAggregateId;
+    }
+
+    public String getAccountAggregateId() {
+        return accountAggregateId;
+    }
+
+    public void setAccountAggregateId(String accountAggregateId) {
+        this.accountAggregateId = accountAggregateId;
+    }
 }

@@ -19,7 +19,9 @@ public class TransactionModelMapper {
                 transaction.getProcessingDate(),
                 transaction.getDetails(),
                 transaction.getAccountNumber(),
-                transaction.getTransactionTypeId()
+                transaction.getTransactionTypeId(),
+                transaction.getTransactionTypeAggregateId(),
+                transaction.getAccountAggregateId()
         );
 
     }

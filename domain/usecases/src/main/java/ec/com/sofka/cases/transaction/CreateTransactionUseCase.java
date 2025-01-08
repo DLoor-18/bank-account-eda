@@ -1,6 +1,7 @@
 package ec.com.sofka.cases.transaction;
 
 import ec.com.sofka.aggregate.AccountAggregate;
+import ec.com.sofka.cases.transcationType.FindTransactionTypeByIdUseCase;
 import ec.com.sofka.exception.RecordNotFoundException;
 import ec.com.sofka.gateway.*;
 import ec.com.sofka.gateway.dto.TransactionDTO;
@@ -10,8 +11,8 @@ import ec.com.sofka.mapper.TransactionMapper;
 import ec.com.sofka.mapper.TransactionTypeMapper;
 import ec.com.sofka.model.ErrorMessage;
 import ec.com.sofka.model.TransactionMessage;
-import ec.com.sofka.entities.transaction.Transaction;
-import ec.com.sofka.entities.transaction.values.objects.ProcessingDate;
+import ec.com.sofka.aggregate.entities.transaction.Transaction;
+import ec.com.sofka.aggregate.entities.transaction.values.objects.ProcessingDate;
 import ec.com.sofka.requests.TransactionRequest;
 import ec.com.sofka.responses.TransactionResponse;
 import ec.com.sofka.rules.BalanceCalculator;
@@ -28,27 +29,27 @@ public class CreateTransactionUseCase implements IUseCaseExecute<TransactionRequ
     private final AccountRepository accountRepository;
     private final ValidateTransaction validateTransaction;
     private final BalanceCalculator balanceCalculator;
+    private final FindTransactionTypeByIdUseCase findTransactionTypeByIdUseCase;
     private final TransactionBusMessage transactionBusMessage;
     private final ErrorBusMessage errorBusMessage;
 
-    public CreateTransactionUseCase(IEventStore repository, TransactionRepository transactionRepository, TransactionTypeRepository transactionTypeRepository, AccountRepository accountRepository, ValidateTransaction validateTransaction, BalanceCalculator balanceCalculator, TransactionBusMessage transactionBusMessage, ErrorBusMessage errorBusMessage) {
+    public CreateTransactionUseCase(IEventStore repository, TransactionRepository transactionRepository, TransactionTypeRepository transactionTypeRepository, AccountRepository accountRepository, ValidateTransaction validateTransaction, BalanceCalculator balanceCalculator, FindTransactionTypeByIdUseCase findTransactionTypeByIdUseCase, TransactionBusMessage transactionBusMessage, ErrorBusMessage errorBusMessage) {
         this.repository = repository;
         this.transactionRepository = transactionRepository;
         this.transactionTypeRepository = transactionTypeRepository;
         this.accountRepository = accountRepository;
         this.validateTransaction = validateTransaction;
         this.balanceCalculator = balanceCalculator;
+        this.findTransactionTypeByIdUseCase = findTransactionTypeByIdUseCase;
         this.transactionBusMessage = transactionBusMessage;
         this.errorBusMessage = errorBusMessage;
     }
 
     @Override
     public Mono<TransactionResponse> execute(TransactionRequest transactionRequest) {
-        return transactionTypeRepository.findById(transactionRequest.getTransactionTypeId())
-                .switchIfEmpty(Mono.defer(() -> {
-                    errorBusMessage.sendMsg(new ErrorMessage("Transaction Type not found.", "Create Transaction"));
-                    return Mono.error(new RecordNotFoundException("Account not found."));
-                })).map(transactionType ->
+        return findTransactionTypeByIdUseCase.getUserByAggregate(transactionRequest.getTransactionTypeAggregateId())
+                .map(TransactionTypeMapper::mapToDTOFromModel)
+                .map(transactionType ->
                         new TransactionDTO(
                                 transactionRequest.getAccountNumber(),
                                 transactionRequest.getDetails(),

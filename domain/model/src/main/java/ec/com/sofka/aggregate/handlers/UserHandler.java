@@ -1,11 +1,11 @@
 package ec.com.sofka.aggregate.handlers;
 
 import ec.com.sofka.aggregate.AccountAggregate;
-import ec.com.sofka.events.UserCreated;
+import ec.com.sofka.aggregate.events.UserCreated;
 import ec.com.sofka.generics.domain.DomainActionsContainer;
-import ec.com.sofka.entities.user.User;
-import ec.com.sofka.entities.user.values.UserId;
-import ec.com.sofka.entities.user.values.objects.IdentityCard;
+import ec.com.sofka.aggregate.entities.user.User;
+import ec.com.sofka.aggregate.entities.user.values.UserId;
+import ec.com.sofka.aggregate.entities.user.values.objects.IdentityCard;
 
 public class UserHandler extends DomainActionsContainer {
 

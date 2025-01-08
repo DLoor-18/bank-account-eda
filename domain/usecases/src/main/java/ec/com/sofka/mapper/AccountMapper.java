@@ -1,9 +1,9 @@
 package ec.com.sofka.mapper;
 
 import ec.com.sofka.gateway.dto.AccountDTO;
-import ec.com.sofka.entities.account.Account;
-import ec.com.sofka.entities.account.values.AccountId;
-import ec.com.sofka.entities.account.values.objects.AccountNumber;
+import ec.com.sofka.aggregate.entities.account.Account;
+import ec.com.sofka.aggregate.entities.account.values.AccountId;
+import ec.com.sofka.aggregate.entities.account.values.objects.AccountNumber;
 import ec.com.sofka.responses.AccountResponse;
 import org.springframework.stereotype.Component;
 
@@ -53,6 +53,7 @@ public class AccountMapper {
         }
 
         return new AccountDTO(
+                account.getId().value(),
                 account.getAccountNumber().value(),
                 account.getBalance(),
                 account.getStatus(),

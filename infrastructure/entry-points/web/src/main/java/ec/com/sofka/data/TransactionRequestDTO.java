@@ -43,6 +43,14 @@ public class TransactionRequestDTO implements Serializable {
     @NotNull(message = "typeTransactionId cannot be null")
     private String transactionTypeId;
 
+    @Schema(description = "transaction Type Aggregate ID")
+    @NotNull(message = "transactionTypeAggregateId cannot be null")
+    private String transactionTypeAggregateId;
+
+    @Schema(description = "Account Aggregate ID")
+    @NotNull(message = "accountAggregateId cannot be null")
+    private String accountAggregateId;
+
     public TransactionRequestDTO(BigDecimal amount, String processingDate, String accountNumber, String details, String status, String transactionTypeId) {
         this.amount = amount;
         this.processingDate = processingDate;
@@ -56,48 +64,35 @@ public class TransactionRequestDTO implements Serializable {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
     public String getProcessingDate() {
         return processingDate;
-    }
-
-    public void setProcessingDate(String processingDate) {
-        this.processingDate = processingDate;
     }
 
     public String getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
 
     public String getDetails() {
         return details;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
-    }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public String getTransactionTypeId() {
         return transactionTypeId;
     }
 
-    public void setTransactionTypeId(String transactionTypeId) {
-        this.transactionTypeId = transactionTypeId;
+    public String getTransactionTypeAggregateId() {
+        return transactionTypeAggregateId;
+    }
+
+    public String getAccountAggregateId() {
+        return accountAggregateId;
     }
 
 }

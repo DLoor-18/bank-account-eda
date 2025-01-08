@@ -29,6 +29,8 @@ public class EventEntity {
     @Field("version")
     private Long version;
 
+    public EventEntity(){}
+
     public EventEntity(String id, String aggregateId, String eventType, String eventData, String timestamp, Long version) {
         this.id = id;
         this.aggregateId = aggregateId;
@@ -49,7 +51,7 @@ public class EventEntity {
                     .collect(Collectors.joining());
 
             return (DomainEvent) eventSerializer
-                    .readFromJson(this.getEventData(), Class.forName("ec.com.sofka.events."+className));
+                    .readFromJson(this.getEventData(), Class.forName("ec.com.sofka.aggregate.events."+className));
         } catch (ClassNotFoundException e) {
             return null;
         }

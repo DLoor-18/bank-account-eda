@@ -1,10 +1,10 @@
 package ec.com.sofka.aggregate.handlers;
 
 import ec.com.sofka.aggregate.AccountAggregate;
-import ec.com.sofka.events.TransactionTypeCreated;
+import ec.com.sofka.aggregate.events.TransactionTypeCreated;
 import ec.com.sofka.generics.domain.DomainActionsContainer;
-import ec.com.sofka.entities.transactionType.TransactionType;
-import ec.com.sofka.entities.transactionType.values.TransactionTypeId;
+import ec.com.sofka.aggregate.entities.transactionType.TransactionType;
+import ec.com.sofka.aggregate.entities.transactionType.values.TransactionTypeId;
 
 public class TransactionTypeHandler extends DomainActionsContainer {
 

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mongodb@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
+    <root id="1">
+      <ServerVersion>8.0.4</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="3" parent="1" name="bank_account">
+      <LastIntrospectionLocalTimestamp>2025-01-07.18:49:54</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="4" parent="1" name="bank_account_audit">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="5" parent="1" name="config">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="6" parent="1" name="events_bank">
+      <LastIntrospectionLocalTimestamp>2025-01-07.18:49:54</LastIntrospectionLocalTimestamp>
+    </schema>
+    <schema id="7" parent="1" name="local">
+      <LastIntrospectionLocalTimestamp>2025-01-06.04:49:21</LastIntrospectionLocalTimestamp>
+    </schema>
+    <table id="8" parent="3" name="accounts"/>
+    <table id="9" parent="3" name="transaction_types"/>
+    <table id="10" parent="3" name="transactions"/>
+    <table id="11" parent="3" name="users"/>
+    <table id="12" parent="6" name="events"/>
+    <column id="13" parent="9" name="_id">
+      <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
+    </column>
+    <column id="14" parent="9" name="_class">
+      <Position>1</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="15" parent="9" name="status">
+      <Position>1</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="16" parent="9" name="description">
+      <Position>2</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="17" parent="9" name="transaction_cost">
+      <Position>2</Position>
+      <StoredType>Boolean|12s</StoredType>
+    </column>
+    <column id="18" parent="9" name="discount">
+      <Position>3</Position>
+      <StoredType>Boolean|12s</StoredType>
+    </column>
+    <column id="19" parent="9" name="type">
+      <Position>3</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="20" parent="9" name="value">
+      <Position>4</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <index id="21" parent="9" name="_id_">
+      <ColNames>_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <column id="22" parent="11" name="_id">
+      <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
+    </column>
+    <column id="23" parent="11" name="email">
+      <Position>1</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="24" parent="11" name="_class">
+      <Position>2</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="25" parent="11" name="first_name">
+      <Position>2</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="26" parent="11" name="identityCard">
+      <Position>3</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="27" parent="11" name="last_name">
+      <Position>4</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="28" parent="11" name="password">
+      <Position>5</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="29" parent="11" name="status">
+      <Position>6</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <index id="30" parent="11" name="_id_">
+      <ColNames>_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <column id="31" parent="12" name="_id">
+      <Position>1</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="32" parent="12" name="_class">
+      <Position>2</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="33" parent="12" name="aggregate_id">
+      <Position>3</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="34" parent="12" name="event_data">
+      <Position>4</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="35" parent="12" name="event_type">
+      <Position>5</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="36" parent="12" name="timestamp">
+      <Position>6</Position>
+      <StoredType>String|12s</StoredType>
+    </column>
+    <column id="37" parent="12" name="version">
+      <Position>7</Position>
+      <StoredType>Int64|12s</StoredType>
+    </column>
+    <index id="38" parent="12" name="_id_">
+      <ColNames>_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+  </database-model>
+</dataSource>
