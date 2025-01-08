@@ -20,7 +20,7 @@ public record IdentityCard(String value) implements IValueObject<String> {
     }
 
     @Override
-    public String value() {
+    public String getValue() {
         return this.value;
     }
 

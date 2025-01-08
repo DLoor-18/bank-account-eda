@@ -1,10 +1,10 @@
 package ec.com.sofka.rules.impl;
 
-import ec.com.sofka.exception.RecordNotFoundException;
+import ec.com.sofka.cases.account.FindAccountByNumberUseCase;
 import ec.com.sofka.exception.TransactionRejectedException;
-import ec.com.sofka.gateway.AccountRepository;
 import ec.com.sofka.gateway.ErrorBusMessage;
 import ec.com.sofka.gateway.dto.TransactionDTO;
+import ec.com.sofka.mapper.AccountMapper;
 import ec.com.sofka.model.ErrorMessage;
 import ec.com.sofka.rules.ValidateTransaction;
 import ec.com.sofka.utils.enums.StatusEnum;
@@ -16,22 +16,18 @@ import java.util.function.Predicate;
 @Component
 public class ValidateTransactionImpl implements ValidateTransaction {
 
-    private final AccountRepository AccountRepository;
+    private final FindAccountByNumberUseCase findAccountByNumberUseCase;
     private final ErrorBusMessage errorBusMessage;
 
-    public ValidateTransactionImpl(AccountRepository accountRepository, ErrorBusMessage errorBusMessage) {
-        this.AccountRepository = accountRepository;
+    public ValidateTransactionImpl(ErrorBusMessage errorBusMessage, FindAccountByNumberUseCase findAccountByNumberUseCase) {
+        this.findAccountByNumberUseCase = findAccountByNumberUseCase;
         this.errorBusMessage = errorBusMessage;
     }
 
-    public Mono<TransactionDTO> validateTransaction(TransactionDTO transaction) {
-        return AccountRepository.findByNumber(transaction.getAccountNumber())
-                .switchIfEmpty(Mono.defer(() -> {
-                    errorBusMessage.sendMsg(new ErrorMessage("Account not found (" + transaction.getAccountNumber() + ")", "Validate Transaction"));
-                    return Mono.error(new RecordNotFoundException("Account not found."));
-                }))
+    public Mono<TransactionDTO> validateTransaction(TransactionDTO transaction, String accountAggregateId) {
+        return findAccountByNumberUseCase.getByAggregate(accountAggregateId)
                 .map(account -> {
-                    transaction.setAccount(account);
+                    transaction.setAccount(AccountMapper.mapToDTOFromModel(account));
                     return transaction;
                 })
                 .flatMap(this::validateTransactionRules);

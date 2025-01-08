@@ -32,7 +32,7 @@ public abstract class AggregateRoot<I extends Identity> extends Entity<I> {
                 .getSimpleName()
                 .replace("Id", "")
                 .toLowerCase();
-        event.setAggregateRootId(getId().value());
+        event.setAggregateRootId(getId().getValue());
         event.setAggregateRootName(aggregateName);
 
         return actionsHandler.append(event);

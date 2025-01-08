@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public class AccountDTO {
     private String id;
 
-    private String number;
+    private String accountNumber;
 
     private BigDecimal balance;
 
@@ -17,16 +17,16 @@ public class AccountDTO {
 
     public AccountDTO() {}
 
-    public AccountDTO(String id, String number, BigDecimal balance, StatusEnum status, UserDTO userDTO) {
+    public AccountDTO(String id, String accountNumber, BigDecimal balance, StatusEnum status, UserDTO userDTO) {
         this.id = id;
-        this.number = number;
+        this.accountNumber = accountNumber;
         this.balance = balance;
         this.status = status;
         this.userDTO = userDTO;
     }
 
-    public AccountDTO(String number, BigDecimal balance, StatusEnum status, UserDTO userDTO) {
-        this.number = number;
+    public AccountDTO(String accountNumber, BigDecimal balance, StatusEnum status, UserDTO userDTO) {
+        this.accountNumber = accountNumber;
         this.balance = balance;
         this.status = status;
         this.userDTO = userDTO;
@@ -40,12 +40,12 @@ public class AccountDTO {
         this.id = id;
     }
 
-    public String getNumber() {
-        return number;
+    public String getAccountNumber() {
+        return accountNumber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public BigDecimal getBalance() {

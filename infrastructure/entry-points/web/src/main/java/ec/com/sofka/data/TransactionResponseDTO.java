@@ -2,18 +2,21 @@ package ec.com.sofka.data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class TransactionResponseDTO implements Serializable {
 
     private String accountNumber;
+    private String details;
     private BigDecimal amount;
+    private String processingDate;
     private AccountResponseDTO account;
     private TransactionTypeResponseDTO typeTransaction;
 
-    public TransactionResponseDTO(String accountNumber, BigDecimal amount, AccountResponseDTO account, TransactionTypeResponseDTO typeTransaction) {
+    public TransactionResponseDTO(String accountNumber,String details, BigDecimal amount, String processingDate, AccountResponseDTO account, TransactionTypeResponseDTO typeTransaction) {
         this.accountNumber = accountNumber;
+        this.details = details;
         this.amount = amount;
+        this.processingDate = processingDate;
         this.account = account;
         this.typeTransaction = typeTransaction;
     }
@@ -50,4 +53,19 @@ public class TransactionResponseDTO implements Serializable {
         this.amount = amount;
     }
 
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getProcessingDate() {
+        return processingDate;
+    }
+
+    public void setProcessingDate(String processingDate) {
+        this.processingDate = processingDate;
+    }
 }

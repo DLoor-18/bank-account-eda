@@ -1,14 +1,11 @@
 package ec.com.sofka.aggregate;
 
-import ec.com.sofka.aggregate.events.AccountCreated;
-import ec.com.sofka.aggregate.events.TransactionCreated;
-import ec.com.sofka.aggregate.events.TransactionTypeCreated;
-import ec.com.sofka.aggregate.events.UserCreated;
+import ec.com.sofka.aggregate.events.*;
 import ec.com.sofka.aggregate.handlers.AccountHandler;
 import ec.com.sofka.aggregate.handlers.TransactionHandler;
 import ec.com.sofka.aggregate.handlers.TransactionTypeHandler;
 import ec.com.sofka.aggregate.handlers.UserHandler;
-import ec.com.sofka.aggregate.values.AccountId;
+import ec.com.sofka.aggregate.values.AccountAggregateId;
 import ec.com.sofka.generics.domain.DomainEvent;
 import ec.com.sofka.generics.shared.AggregateRoot;
 import ec.com.sofka.aggregate.entities.account.Account;
@@ -23,14 +20,14 @@ import ec.com.sofka.utils.enums.StatusEnum;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class AccountAggregate extends AggregateRoot<AccountId> {
+public class AccountAggregate extends AggregateRoot<AccountAggregateId> {
     private User user;
     private TransactionType transactionType;
     private Account account;
     private Transaction transaction;
 
     public AccountAggregate() {
-        super(new AccountId());
+        super(new AccountAggregateId());
         setSubscription(new UserHandler(this));
         setSubscription(new TransactionTypeHandler(this));
         setSubscription(new AccountHandler(this));
@@ -38,28 +35,31 @@ public class AccountAggregate extends AggregateRoot<AccountId> {
     }
 
     public AccountAggregate(final String id) {
-        super(AccountId.of(id));
+        super(AccountAggregateId.of(id));
         setSubscription(new UserHandler(this));
+        setSubscription(new TransactionTypeHandler(this));
+        setSubscription(new AccountHandler(this));
+        setSubscription(new TransactionHandler(this));
     }
 
     public void createUser(String firstName, String lastName, String identityCard, String email, String password, StatusEnum statusEnum) {
-        addEvent(new UserCreated(new UserId().value(), firstName, lastName, identityCard, email, password, statusEnum)).apply();
+        addEvent(new UserCreated(new UserId().getValue(), firstName, lastName, identityCard, email, password, statusEnum)).apply();
     }
 
     public void createTransactionType(String type, String description, BigDecimal value, Boolean transactionCost, Boolean discount, StatusEnum statusEnum) {
-        addEvent(new TransactionTypeCreated(new TransactionTypeId().value(), type, description, value, transactionCost, discount, statusEnum)).apply();
+        addEvent(new TransactionTypeCreated(new TransactionTypeId().getValue(), type, description, value, transactionCost, discount, statusEnum)).apply();
     }
 
     public void createAccount(String accountNumber, BigDecimal balance, StatusEnum statusEnum, User user) {
-        addEvent(new AccountCreated(new AccountId().value(), accountNumber, balance, statusEnum, user)).apply();
+        addEvent(new AccountCreated(new AccountAggregateId().getValue(), accountNumber, balance, statusEnum, user)).apply();
     }
 
     public void updateAccount(String accountId, String accountNumber, BigDecimal balance, StatusEnum statusEnum, User user) {
-        addEvent(new AccountCreated(AccountId.of(accountId).value(), accountNumber, balance, statusEnum, user)).apply();
+        addEvent(new AccountUpdated(AccountAggregateId.of(accountId).getValue(), accountNumber, balance, statusEnum, user)).apply();
     }
 
     public void createTransaction(String transactionAccount, String details, BigDecimal amount, String processingDate, Account account, TransactionType transactionType) {
-        addEvent(new TransactionCreated(new TransactionId().value(), transactionAccount, details, amount, processingDate, account, transactionType)).apply();
+        addEvent(new TransactionCreated(new TransactionId().getValue(), transactionAccount, details, amount, processingDate, account, transactionType)).apply();
     }
 
     public static AccountAggregate from(final String id, List<DomainEvent> events) {

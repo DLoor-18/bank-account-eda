@@ -23,7 +23,7 @@ public record ProcessingDate(String value) implements IValueObject<String> {
     }
 
     @Override
-    public String value() {
+    public String getValue() {
         return this.value;
     }
 

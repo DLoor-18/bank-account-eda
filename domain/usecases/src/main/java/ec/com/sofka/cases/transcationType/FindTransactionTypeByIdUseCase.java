@@ -40,7 +40,7 @@ public class FindTransactionTypeByIdUseCase implements IUseCaseGetElement<GetEle
                 .collectList()
                 .map(eventsList -> AccountAggregate.from(aggregateId, eventsList))
                 .flatMap(accountAggregate ->
-                        transactionTypeRepository.findById(accountAggregate.getTransactionType().getId().value())
+                        transactionTypeRepository.findById(accountAggregate.getTransactionType().getId().getValue())
                                 .map(TransactionTypeMapper::mapToModelFromDTO)
                 );
     }

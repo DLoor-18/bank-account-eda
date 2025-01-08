@@ -27,11 +27,11 @@ public class FindAccountByNumberUseCase implements IUseCaseGetElement<GetElement
     @Override
     public Mono<AccountResponse> get(GetElementRequest request) {
 
-        return getUserByAggregate(request.getAggregateId())
+        return getByAggregate(request.getAggregateId())
                 .map(AccountMapper::mapToResponseFromModel);
     }
 
-    public Mono<Account> getUserByAggregate(String aggregateId) {
+    public Mono<Account> getByAggregate(String aggregateId) {
         return eventStore.findAggregate(aggregateId)
                 .switchIfEmpty(Mono.defer(() -> {
                     errorBusMessage.sendMsg(new ErrorMessage("Account not found", "Get Account by NumberAccount"));
@@ -40,7 +40,7 @@ public class FindAccountByNumberUseCase implements IUseCaseGetElement<GetElement
                 .collectList()
                 .map(eventsList -> AccountAggregate.from(aggregateId, eventsList))
                 .flatMap(accountAggregate ->
-                        accountRepository.findByNumber(accountAggregate.getAccount().getId().value())
+                        accountRepository.findByNumber(accountAggregate.getAccount().getAccountNumber().getValue())
                                 .map(AccountMapper::mapToModelFromDTO)
                 );
     }

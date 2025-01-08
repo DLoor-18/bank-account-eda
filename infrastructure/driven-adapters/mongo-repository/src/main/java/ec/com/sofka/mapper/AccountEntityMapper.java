@@ -14,7 +14,7 @@ public class AccountEntityMapper {
 
         return new AccountEntity(
                 account.getId(),
-                account.getNumber(),
+                account.getAccountNumber(),
                 account.getBalance(),
                 account.getStatus(),
                 UserEntityMapper.mapToEntity(account.getUser())

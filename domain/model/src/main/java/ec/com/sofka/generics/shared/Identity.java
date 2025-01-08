@@ -17,7 +17,7 @@ public abstract class Identity implements IValueObject<String> {
     }
 
     @Override
-    public String value() {
+    public String getValue() {
         return value;
     }
 

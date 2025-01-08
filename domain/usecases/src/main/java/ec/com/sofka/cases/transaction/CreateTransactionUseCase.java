@@ -1,18 +1,18 @@
 package ec.com.sofka.cases.transaction;
 
 import ec.com.sofka.aggregate.AccountAggregate;
+import ec.com.sofka.cases.account.UpdateAccountUseCase;
 import ec.com.sofka.cases.transcationType.FindTransactionTypeByIdUseCase;
-import ec.com.sofka.exception.RecordNotFoundException;
 import ec.com.sofka.gateway.*;
 import ec.com.sofka.gateway.dto.TransactionDTO;
 import ec.com.sofka.generics.interfaces.IUseCaseExecute;
 import ec.com.sofka.mapper.AccountMapper;
 import ec.com.sofka.mapper.TransactionMapper;
 import ec.com.sofka.mapper.TransactionTypeMapper;
-import ec.com.sofka.model.ErrorMessage;
 import ec.com.sofka.model.TransactionMessage;
 import ec.com.sofka.aggregate.entities.transaction.Transaction;
 import ec.com.sofka.aggregate.entities.transaction.values.objects.ProcessingDate;
+import ec.com.sofka.requests.AccountRequest;
 import ec.com.sofka.requests.TransactionRequest;
 import ec.com.sofka.responses.TransactionResponse;
 import ec.com.sofka.rules.BalanceCalculator;
@@ -25,24 +25,20 @@ import java.math.BigDecimal;
 public class CreateTransactionUseCase implements IUseCaseExecute<TransactionRequest, TransactionResponse> {
     private final IEventStore repository;
     private final TransactionRepository transactionRepository;
-    private final TransactionTypeRepository transactionTypeRepository;
-    private final AccountRepository accountRepository;
     private final ValidateTransaction validateTransaction;
     private final BalanceCalculator balanceCalculator;
     private final FindTransactionTypeByIdUseCase findTransactionTypeByIdUseCase;
+    private final UpdateAccountUseCase updateAccountUseCase;
     private final TransactionBusMessage transactionBusMessage;
-    private final ErrorBusMessage errorBusMessage;
 
-    public CreateTransactionUseCase(IEventStore repository, TransactionRepository transactionRepository, TransactionTypeRepository transactionTypeRepository, AccountRepository accountRepository, ValidateTransaction validateTransaction, BalanceCalculator balanceCalculator, FindTransactionTypeByIdUseCase findTransactionTypeByIdUseCase, TransactionBusMessage transactionBusMessage, ErrorBusMessage errorBusMessage) {
+    public CreateTransactionUseCase(IEventStore repository, TransactionRepository transactionRepository, ValidateTransaction validateTransaction, BalanceCalculator balanceCalculator, FindTransactionTypeByIdUseCase findTransactionTypeByIdUseCase, TransactionBusMessage transactionBusMessage, UpdateAccountUseCase updateAccountUseCase) {
         this.repository = repository;
         this.transactionRepository = transactionRepository;
-        this.transactionTypeRepository = transactionTypeRepository;
-        this.accountRepository = accountRepository;
+        this.updateAccountUseCase = updateAccountUseCase;
         this.validateTransaction = validateTransaction;
         this.balanceCalculator = balanceCalculator;
         this.findTransactionTypeByIdUseCase = findTransactionTypeByIdUseCase;
         this.transactionBusMessage = transactionBusMessage;
-        this.errorBusMessage = errorBusMessage;
     }
 
     @Override
@@ -57,54 +53,53 @@ public class CreateTransactionUseCase implements IUseCaseExecute<TransactionRequ
                                 null,
                                 null,
                                 transactionType))
-                .flatMap(validateTransaction::validateTransaction)
-                .flatMap(this::updateBalanceAndSave)
-                .flatMap(tran -> {
-                    transactionBusMessage.sendMsg(
-                            new TransactionMessage(tran.getId().value(),
-                                    tran.getTransactionAccount().value(),
-                                    tran.getTransactionType().getType(),
-                                    tran.getAmount().value()));
-                    return Mono.just(tran);
-                })
-                .map(TransactionMapper::mapToResponseFromModel);
+                .flatMap(transactionDTO -> validateTransaction.validateTransaction(transactionDTO, transactionRequest.getAccountAggregateId()))
+                .flatMap(transactionDTO -> updateBalanceAndSave(transactionDTO, transactionRequest.getAccountAggregateId()));
+
     }
 
-    public Mono<Transaction> updateBalanceAndSave(TransactionDTO transaction) {
+    public Mono<TransactionResponse> updateBalanceAndSave(TransactionDTO transaction, String accountAggregateId) {
         AccountAggregate accountAggregate = new AccountAggregate();
 
-        BigDecimal newBalance = balanceCalculator.calculate(
-                transaction,
-                transaction.getAccount().getBalance()
-        );
+        BigDecimal newBalance = balanceCalculator.calculate(transaction, transaction.getAccount().getBalance());
         transaction.getAccount().setBalance(newBalance);
+        transaction.setProcessingDate(new ProcessingDate(transaction.getProcessingDate()).getValue());
 
         accountAggregate.createTransaction(
                 transaction.getAccountNumber(),
                 transaction.getDetails(),
                 transaction.getAmount(),
-                new ProcessingDate(null).value(),
+                transaction.getProcessingDate(),
                 AccountMapper.mapToModelFromDTO(transaction.getAccount()),
                 TransactionTypeMapper.mapToModelFromDTO(transaction.getTransactionType())
         );
 
-        accountAggregate.updateAccount(
-                accountAggregate.getTransaction().getAccount().getId().value(),
-                accountAggregate.getTransaction().getAccount().getAccountNumber().value(),
-                accountAggregate.getTransaction().getAccount().getBalance(),
-                accountAggregate.getTransaction().getAccount().getStatus(),
-                accountAggregate.getTransaction().getAccount().getUser()
+        AccountRequest accountRequest = new AccountRequest(
+                accountAggregateId,
+                transaction.getAccount().getAccountNumber(),
+                transaction.getAccount().getBalance(),
+                transaction.getAccount().getStatus(),
+                transaction.getAccount().getUser().getId(),
+                null
         );
 
-        return accountRepository.save(transaction.getAccount())
+        return updateAccountUseCase.execute(accountRequest)
                 .then(transactionRepository.save(transaction))
-                .flatMap(account -> Flux.fromIterable(accountAggregate.getUncommittedEvents())
+                .flatMap(transactionDTO -> {
+                    transactionBusMessage.sendMsg(
+                            new TransactionMessage(transactionDTO.getId(),
+                                    transactionDTO.getAccountNumber(),
+                                    transactionDTO.getTransactionType().getType(),
+                                    transactionDTO.getAmount()));
+
+                    return Flux.fromIterable(accountAggregate.getUncommittedEvents())
                         .flatMap(repository::save)
-                        .then(Mono.just(account)))
-                .then(Mono.fromCallable(() -> {
+                        .then(Mono.just(transactionDTO));
+                })
+                .mapNotNull(transactionDTO -> {
                     accountAggregate.markEventsAsCommitted();
-                    return accountAggregate.getTransaction();
-                }));
+                    return TransactionMapper.mapToResponseFromDTO(transaction);
+                });
     }
 
 }

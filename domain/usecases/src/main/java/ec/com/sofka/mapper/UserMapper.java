@@ -30,7 +30,7 @@ public class UserMapper {
         return new UserResponse(
                 user.getFirstName(),
                 user.getLastName(),
-                user.getIdentityCard().value(),
+                user.getIdentityCard().getValue(),
                 user.getEmail(),
                 user.getStatus()
         );
@@ -56,10 +56,10 @@ public class UserMapper {
         }
 
         return new UserDTO(
-                user.getId().value(),
+                user.getId().getValue(),
                 user.getFirstName(),
                 user.getLastName(),
-                user.getIdentityCard().value(),
+                user.getIdentityCard().getValue(),
                 user.getEmail(),
                 user.getPassword(),
                 user.getStatus()

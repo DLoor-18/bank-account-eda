@@ -5,5 +5,5 @@ import reactor.core.publisher.Mono;
 
 @FunctionalInterface
 public interface ValidateTransaction {
-    Mono<TransactionDTO> validateTransaction(TransactionDTO transaction);
+    Mono<TransactionDTO> validateTransaction(TransactionDTO transaction, String accountAggregateId);
 }

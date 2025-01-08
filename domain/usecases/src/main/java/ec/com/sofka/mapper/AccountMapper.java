@@ -17,7 +17,7 @@ public class AccountMapper {
 
         return new Account(
                 AccountId.of(account.getId()),
-                AccountNumber.of(account.getNumber()),
+                AccountNumber.of(account.getAccountNumber()),
                 account.getBalance(),
                 account.getStatus(),
                 UserMapper.mapToModelFromDTO(account.getUser()));
@@ -29,7 +29,7 @@ public class AccountMapper {
         }
 
         return new AccountResponse(
-                account.getAccountNumber().value(),
+                account.getAccountNumber().getValue(),
                 account.getBalance(),
                 account.getStatus(),
                 UserMapper.mapToResponseFromModel(account.getUser()));
@@ -41,7 +41,7 @@ public class AccountMapper {
         }
 
         return new AccountResponse(
-                account.getNumber(),
+                account.getAccountNumber(),
                 account.getBalance(),
                 account.getStatus(),
                 UserMapper.mapToResponseFromDTO(account.getUser()));
@@ -53,8 +53,8 @@ public class AccountMapper {
         }
 
         return new AccountDTO(
-                account.getId().value(),
-                account.getAccountNumber().value(),
+                account.getId().getValue(),
+                account.getAccountNumber().getValue(),
                 account.getBalance(),
                 account.getStatus(),
                 account.getUser() != null ? UserMapper.mapToDTOFromModel(account.getUser()) : null);

@@ -1,5 +1,7 @@
 package ec.com.sofka.aggregate.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import ec.com.sofka.generics.shared.Entity;
 import ec.com.sofka.aggregate.entities.user.values.UserId;
 import ec.com.sofka.aggregate.entities.user.values.objects.IdentityCard;
@@ -19,7 +21,16 @@ public class User extends Entity<UserId> {
 
     private StatusEnum status;
 
-    public User(UserId userId, String firstName, String lastName, IdentityCard identityCard, String email, String password, StatusEnum status) {
+    @JsonCreator
+    public User(
+            @JsonProperty("id") UserId userId,
+            @JsonProperty("firstName") String firstName,
+            @JsonProperty("lastName") String lastName,
+            @JsonProperty("identityCard") IdentityCard identityCard,
+            @JsonProperty("email") String email,
+            @JsonProperty("password") String password,
+            @JsonProperty("status") StatusEnum status
+    ) {
         super(userId);
         this.firstName = firstName;
         this.lastName = lastName;

@@ -12,6 +12,15 @@ public class AccountRequest extends Request {
     private String userId;
     private String userAggregateId;
 
+    public AccountRequest(String aggregateId, String accountNumber, BigDecimal balance, StatusEnum status, String userId, String userAggregateId) {
+        super(aggregateId);
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.status = status;
+        this.userId = userId;
+        this.userAggregateId = userAggregateId;
+    }
+
     public AccountRequest(String accountNumber, BigDecimal balance, StatusEnum status, String userId, String userAggregateId) {
         super(null);
         this.accountNumber = accountNumber;

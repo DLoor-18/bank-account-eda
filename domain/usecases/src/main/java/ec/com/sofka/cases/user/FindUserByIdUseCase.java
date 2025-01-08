@@ -39,7 +39,7 @@ public class FindUserByIdUseCase implements IUseCaseGetElement<GetElementRequest
                 .collectList()
                 .map(eventsList -> AccountAggregate.from(aggregateId, eventsList))
                 .flatMap(accountAggregate ->
-                        userRepository.findById(accountAggregate.getUser().getId().value())
+                        userRepository.findById(accountAggregate.getUser().getId().getValue())
                                 .map(UserMapper::mapToModelFromDTO)
                 );
     }

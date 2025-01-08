@@ -57,7 +57,7 @@ public class TransactionTypeMapper {
             return null;
         }
         return new TransactionTypeDTO(
-                transactionType.getId().value(),
+                transactionType.getId().getValue(),
                 transactionType.getType(),
                 transactionType.getDescription(),
                 transactionType.getValue(),

@@ -15,10 +15,10 @@ public class TransactionMapper {
         }
 
         return new TransactionResponse(
-                transaction.getTransactionAccount().value(),
+                transaction.getTransactionAccount().getValue(),
                 transaction.getDetails(),
-                transaction.getAmount().value(),
-                transaction.getProcessingDate().value(),
+                transaction.getAmount().getValue(),
+                transaction.getProcessingDate().getValue(),
                 AccountMapper.mapToResponseFromModel(transaction.getAccount()),
                 TransactionTypeMapper.mapToResponseFromModel(transaction.getTransactionType()));
     }

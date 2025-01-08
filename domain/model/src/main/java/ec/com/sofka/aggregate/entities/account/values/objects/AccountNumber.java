@@ -3,10 +3,9 @@ package ec.com.sofka.aggregate.entities.account.values.objects;
 import ec.com.sofka.generics.interfaces.IValueObject;
 
 
-public class AccountNumber implements IValueObject<String> {
-    private final String value;
+public record  AccountNumber(String value) implements IValueObject<String> {
 
-    private AccountNumber(final String value) {
+    public AccountNumber(final String value) {
         this.value = validate(value);
     }
 
@@ -14,15 +13,16 @@ public class AccountNumber implements IValueObject<String> {
         return new AccountNumber(value);
     }
 
-    @Override
-    public String value() {
-        return value;
-    }
 
     private String validate(final String value) {
         if (value == null || !value.matches("\\d{10}")) {
             throw new IllegalArgumentException("Invalid number account.");
         }
+        return value;
+    }
+
+    @Override
+    public String getValue() {
         return value;
     }
 

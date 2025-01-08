@@ -5,59 +5,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="504a7607-67a9-49fc-870d-67eab321a431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/UpdateAccountUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/applications/app-service/src/main/java/ec/com/sofka/config/JacksonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/applications/app-service/src/main/java/ec/com/sofka/config/JacksonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/applications/app-service/src/main/java/ec/com/sofka/config/JacksonConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/AccountAggregate.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/AccountAggregate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/account/values/objects/AccountNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/account/values/objects/AccountNumber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/transaction/values/objects/Amount.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/transaction/values/objects/Amount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/transaction/values/objects/ProcessingDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/transaction/values/objects/ProcessingDate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/transaction/values/objects/TransactionAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/transaction/values/objects/TransactionAccount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/user/values/objects/IdentityCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/entities/user/values/objects/IdentityCard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/events/AccountCreated.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/events/AccountCreated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/events/AccountUpdated.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/events/AccountUpdated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/handlers/AccountHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/handlers/AccountHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/aggregate/values/AccountId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/generics/interfaces/IValueObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/generics/interfaces/IValueObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/generics/shared/AggregateRoot.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/generics/shared/AggregateRoot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/generics/shared/Identity.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/generics/shared/Identity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/utils/enums/EventsEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/classes/java/main/ec/com/sofka/utils/enums/EventsEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/libs/model-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/libs/model-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/Account.class.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/AccountAggregate.class.uniqueId21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/AccountCreated.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/AccountHandler.class.uniqueId7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/AccountId.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/AccountNumber.class.uniqueId16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/AccountUpdated.class.uniqueId11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/Amount.class.uniqueId9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/FirstName.class.uniqueId10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/IdentityCard.class.uniqueId20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/ProcessingDate.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/Transaction.class.uniqueId14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionAccount.class.uniqueId23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionCreated.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionHandler.class.uniqueId13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionId.class.uniqueId17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionType.class.uniqueId12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionTypeCreated.class.uniqueId8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionTypeHandler.class.uniqueId18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/TransactionTypeId.class.uniqueId22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/User.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/UserCreated.class.uniqueId19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/UserHandler.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/compileTransaction/stash-dir/UserId.class.uniqueId15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/AccountAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/AccountAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/values/objects/AccountNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/values/objects/AccountNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/Amount.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/Amount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/ProcessingDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/ProcessingDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/TransactionAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/TransactionAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/objects/IdentityCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/objects/IdentityCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountCreated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountUpdated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountUpdated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/AccountHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/TransactionTypeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/handlers/UserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/account/values/AccountId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/values/AccountId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/account/values/objects/AccountNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/account/values/objects/AccountNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/TransactionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/TransactionId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/objects/Amount.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/Amount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/objects/ProcessingDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/ProcessingDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transaction/values/objects/TransactionAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transaction/values/objects/TransactionAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transactionType/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transactionType/TransactionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/transactionType/values/TransactionTypeId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/transactionType/values/TransactionTypeId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/values/FirstName.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/FirstName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/values/UserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/UserId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/entities/user/values/objects/IdentityCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/entities/user/values/objects/IdentityCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/AccountCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountCreated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/AccountUpdated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/AccountUpdated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/TransactionCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/TransactionCreated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/TransactionTypeCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/TransactionTypeCreated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/events/UserCreated.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/events/UserCreated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/CreateAccountUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/CreateAccountUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/values/AccountId.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/values/AccountAggregateId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/generics/interfaces/IValueObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/generics/interfaces/IValueObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/generics/shared/AggregateRoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/generics/shared/AggregateRoot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/generics/shared/Identity.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/generics/shared/Identity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/utils/enums/EventsEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/utils/enums/EventsEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/account/FindAccountByNumberUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/account/FindAccountByNumberUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/transaction/CreateTransactionUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/transaction/CreateTransactionUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/transcationType/FindTransactionTypeByIdUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/transcationType/FindTransactionTypeByIdUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/user/FindUserByCiUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/user/FindUserByCiUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/user/FindUserByIdUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/cases/user/FindUserByIdUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/gateway/dto/AccountDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/gateway/dto/AccountDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/TransactionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/TransactionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/TransactionTypeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/TransactionTypeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/requests/AccountRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/requests/AccountRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/requests/TransactionRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/requests/TransactionRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/rules/ValidateTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/rules/ValidateTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/rules/impl/ValidateTransactionImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/classes/java/main/ec/com/sofka/rules/impl/ValidateTransactionImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/libs/usecases-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/libs/usecases-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/tmp/compileJava/compileTransaction/stash-dir/CreateAccountUseCase.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/tmp/compileJava/compileTransaction/stash-dir/FindUserByIdUseCase.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/FindAccountByNumberUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/FindAccountByNumberUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/UpdateAccountUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/account/UpdateAccountUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transaction/CreateTransactionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transaction/CreateTransactionUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transcationType/FindTransactionTypeByIdUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/transcationType/FindTransactionTypeByIdUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByCiUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByCiUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByIdUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByIdUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/IEventStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/IEventStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/dto/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/gateway/dto/AccountDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/AccountMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionTypeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/requests/TransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/requests/TransactionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/EventMongoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/EventMongoAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/EventEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/EventEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/TransactionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/data/TransactionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/requests/AccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/requests/AccountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/rules/ValidateTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/rules/ValidateTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/rules/impl/ValidateTransactionImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/rules/impl/ValidateTransactionImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/build/classes/java/main/ec/com/sofka/mapper/AccountEntityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/build/classes/java/main/ec/com/sofka/mapper/AccountEntityMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/build/libs/mongo-repository-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/build/libs/mongo-repository-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/AccountEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/AccountEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionTypeEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/TransactionTypeEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/UserEntityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/mapper/UserEntityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/AccountRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/AccountRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionTypeRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionTypeRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/UserRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/ConflictException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/RecordNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/TransactionRejectedException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/mapper/TransactionModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/mapper/TransactionModelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/AccountRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/AccountRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/TransactionRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/TransactionRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/TransactionTypeRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/TransactionTypeRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/UserRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/data/UserRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/mapper/TransactionModelMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/classes/java/main/ec/com/sofka/mapper/TransactionModelMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/libs/web-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/libs/web-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/tmp/compileJava/compileTransaction/stash-dir/AccountRouter.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/tmp/compileJava/compileTransaction/stash-dir/CreateAccountHandler.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/data/TransactionResponseDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +190,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MainApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MainApplication.executor&quot;: &quot;Debug&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/lt1112/CURSOS/bank-account-eda/infrastructure/entry-points/web/src/main/java/ec/com/sofka&quot;,
@@ -265,7 +322,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735926706425</updated>
-      <workItem from="1735926707650" duration="144168000" />
+      <workItem from="1735926707650" duration="167742000" />
     </task>
     <servers />
   </component>
@@ -276,29 +333,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/driven-adapters/mongo-repository/src/main/java/ec/com/sofka/AccountAdapter.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/domain/model/src/main/java/ec/com/sofka/aggregate/AccountAggregate.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/UserMapper.java</url>
           <line>69</line>
           <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/4.4.1/2cd1faa1142449e1b0341f78428814a5012f2830/spring-data-mongodb-4.4.1.jar!/org/springframework/data/mongodb/repository/support/SimpleReactiveMongoRepository.class</url>
-          <line>56</line>
-          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/GlobalErrorWebExceptionHandler.java</url>
@@ -307,20 +344,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/GlobalErrorWebExceptionHandler.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/exception/GlobalErrorWebExceptionHandler.java</url>
           <line>42</line>
           <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/cases/user/FindUserByIdUseCase.java</url>
+          <line>39</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/domain/usecases/src/main/java/ec/com/sofka/mapper/TransactionMapper.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/entry-points/web/src/main/java/ec/com/sofka/handlers/transaction/CreateTransactionHandler.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="166" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="ex.getClass()" />
-        <watch expression="InternalServerException.class" />
+        <watch expression="request.getAggregateId()" />
+        <watch expression="TransactionMapper.mapToResponseFromModel(accountAggregate.getTransaction())" />
+        <watch expression="accountAggregate.getTransaction()" />
       </configuration>
     </watches-manager>
   </component>

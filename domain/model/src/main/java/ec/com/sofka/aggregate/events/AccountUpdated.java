@@ -8,15 +8,15 @@ import ec.com.sofka.utils.enums.StatusEnum;
 import java.math.BigDecimal;
 
 public class AccountUpdated extends DomainEvent {
-    private String AccountId;
+    private String accountId;
     private String accountNumber;
     private BigDecimal balance;
     private StatusEnum status;
     private User user;
 
     public AccountUpdated(String accountId, String accountNumber, BigDecimal balance, StatusEnum status, User user) {
-        super(EventsEnum.ACCOUNT_CREATED.name());
-        AccountId = accountId;
+        super(EventsEnum.ACCOUNT_UPDATED.name());
+        this.accountId = accountId;
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.status = status;
@@ -28,7 +28,7 @@ public class AccountUpdated extends DomainEvent {
     }
 
     public String getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
     public String getAccountNumber() {

@@ -22,7 +22,7 @@ public record Amount(BigDecimal value) implements IValueObject<BigDecimal> {
     }
 
     @Override
-    public BigDecimal value() {
+    public BigDecimal getValue() {
         return this.value;
     }
 

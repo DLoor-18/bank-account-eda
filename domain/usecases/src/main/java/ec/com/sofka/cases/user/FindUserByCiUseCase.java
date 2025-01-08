@@ -25,7 +25,7 @@ public class FindUserByCiUseCase implements IUseCaseGetElement<GetElementRequest
                 .collectList()
                 .map(eventsList -> AccountAggregate.from(request.getAggregateId(), eventsList))
                 .flatMap(accountAggregate ->
-                        userRepository.findByIdentityCard(accountAggregate.getUser().getIdentityCard().value())
+                        userRepository.findByIdentityCard(accountAggregate.getUser().getIdentityCard().getValue())
                                 .map(UserMapper::mapToResponseFromDTO)
                 );
 
